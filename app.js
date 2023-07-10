@@ -226,7 +226,6 @@ app.post("/notification_handler", function (req, res) {
       );
       const docSnap = await getDocs(q);
       const id = docSnap.docs[0].id;
-      const uid = docSnap.docs[0].data().userId;
 
       if (payment_type == "cstore") {
         await updateDoc(doc(firestoreDb, "payments", id), {
@@ -239,7 +238,19 @@ app.post("/notification_handler", function (req, res) {
           transactionStatus == "settlement" ||
           transactionStatus == "capture"
         ) {
-          await updateDoc(doc(firestoreDb, "users", uid), {
+          const q2 = query(
+            collection(firestoreDb, "payments"),
+            where("invoiceId", "==", invoiceId),
+            where("status", "==", false)
+          );
+          const docSnap2 = await getDocs(q2);
+          const id2 = docSnap2.docs[0].id;
+          const uid2 = docSnap2.docs[0].data().userId;
+
+          await updateDoc(doc(firestoreDb, "payments", id2), {
+            status: true,
+          });
+          await updateDoc(doc(firestoreDb, "users", uid2), {
             balance: increment(parseInt(gross_amount)),
           });
         }
@@ -253,13 +264,23 @@ app.post("/notification_handler", function (req, res) {
           status: transactionStatus,
         });
 
-        console.log(transactionStatus);
-
         if (
           transactionStatus == "settlement" ||
           transactionStatus == "capture"
         ) {
-          await updateDoc(doc(firestoreDb, "users", uid), {
+          const q2 = query(
+            collection(firestoreDb, "payments"),
+            where("invoiceId", "==", invoiceId),
+            where("status", "==", false)
+          );
+          const docSnap2 = await getDocs(q2);
+          const id2 = docSnap2.docs[0].id;
+          const uid2 = docSnap2.docs[0].data().userId;
+
+          await updateDoc(doc(firestoreDb, "payments", id2), {
+            status: true,
+          });
+          await updateDoc(doc(firestoreDb, "users", uid2), {
             balance: increment(parseInt(gross_amount)),
           });
         }
@@ -275,7 +296,19 @@ app.post("/notification_handler", function (req, res) {
             transactionStatus == "settlement" ||
             transactionStatus == "capture"
           ) {
-            await updateDoc(doc(firestoreDb, "users", uid), {
+            const q2 = query(
+              collection(firestoreDb, "payments"),
+              where("invoiceId", "==", invoiceId),
+              where("status", "==", false)
+            );
+            const docSnap2 = await getDocs(q2);
+            const id2 = docSnap2.docs[0].id;
+            const uid2 = docSnap2.docs[0].data().userId;
+
+            await updateDoc(doc(firestoreDb, "payments", id2), {
+              status: true,
+            });
+            await updateDoc(doc(firestoreDb, "users", uid2), {
               balance: increment(parseInt(gross_amount)),
             });
           }
@@ -290,7 +323,19 @@ app.post("/notification_handler", function (req, res) {
             transactionStatus == "settlement" ||
             transactionStatus == "capture"
           ) {
-            await updateDoc(doc(firestoreDb, "users", uid), {
+            const q2 = query(
+              collection(firestoreDb, "payments"),
+              where("invoiceId", "==", invoiceId),
+              where("status", "==", false)
+            );
+            const docSnap2 = await getDocs(q2);
+            const id2 = docSnap2.docs[0].id;
+            const uid2 = docSnap2.docs[0].data().userId;
+
+            await updateDoc(doc(firestoreDb, "payments", id2), {
+              status: true,
+            });
+            await updateDoc(doc(firestoreDb, "users", uid2), {
               balance: increment(parseInt(gross_amount)),
             });
           }
