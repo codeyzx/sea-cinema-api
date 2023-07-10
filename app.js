@@ -230,8 +230,8 @@ app.post("/notification_handler", function (req, res) {
       if (payment_type == "cstore") {
         await updateDoc(doc(firestoreDb, "payments", id), {
           methodPayment: transactionStatusObject.store,
-          status: transactionStatus,
-          token: transactionStatusObject.payment_code,
+          statusPayment: transactionStatus,
+          tokenPayment: transactionStatusObject.payment_code,
         });
 
         if (
@@ -261,7 +261,7 @@ app.post("/notification_handler", function (req, res) {
       ) {
         await updateDoc(doc(firestoreDb, "payments", id), {
           methodPayment: payment_type,
-          status: transactionStatus,
+          statusPayment: transactionStatus,
         });
 
         if (
@@ -288,8 +288,8 @@ app.post("/notification_handler", function (req, res) {
         if (transactionStatusObject.permata_va_number != null) {
           await updateDoc(doc(firestoreDb, "payments", id), {
             methodPayment: "permata",
-            status: transactionStatus,
-            token: transactionStatusObject.permata_va_number,
+            statusPayment: transactionStatus,
+            tokenPayment: transactionStatusObject.permata_va_number,
           });
 
           if (
@@ -315,8 +315,8 @@ app.post("/notification_handler", function (req, res) {
         } else {
           await updateDoc(doc(firestoreDb, "payments", id), {
             methodPayment: transactionStatusObject.va_numbers[0].bank,
-            status: transactionStatus,
-            token: transactionStatusObject.va_numbers[0].va_number,
+            statusPayment: transactionStatus,
+            tokenPayment: transactionStatusObject.va_numbers[0].va_number,
           });
 
           if (
