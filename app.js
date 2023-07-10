@@ -253,6 +253,8 @@ app.post("/notification_handler", function (req, res) {
           status: transactionStatus,
         });
 
+        console.log(transactionStatus);
+
         if (
           transactionStatus == "settlement" ||
           transactionStatus == "capture"
