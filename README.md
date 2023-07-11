@@ -53,6 +53,7 @@ npm start
 The server will start running on http://localhost:3000.
 
 5. Access the API documentation:
+
    Open http://localhost:3000/api-docs in your browser to view the Swagger UI documentation.
 
 ## API Endpoints
