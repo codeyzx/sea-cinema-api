@@ -11,10 +11,21 @@ This is a payment API for SEA CINEMA, built using Node.js and Express.
 ## Getting Started
 
 1. Clone the repository:
-   $ git clone https://github.com/codeyzx/sea-cinema-api.git
+
+```
+git clone https://github.com/codeyzx/sea-cinema-api.git
+```
+
 2. Install dependencies:
-   $ cd sea-cinema-api
-   $ npm install
+
+```
+   cd sea-cinema-api
+```
+
+```
+npm install
+```
+
 3. Set up environment variables:
 
 - Create a `.env` file in the root directory.
@@ -34,10 +45,13 @@ This is a payment API for SEA CINEMA, built using Node.js and Express.
   Replace `YOUR_FIREBASE_API_KEY`, `YOUR_FIREBASE_AUTH_DOMAIN`, etc. with your actual Firebase project and Midtrans API credentials.
 
 4. Start the server:
-   $ npm start
-   The server will start running on http://localhost:3000.
-5. Access the API documentation:
-   Open http://localhost:3000/api-docs in your browser to view the Swagger UI documentation.
+
+```
+npm start
+```
+
+The server will start running on http://localhost:3000. 5. Access the API documentation:
+Open http://localhost:3000/api-docs in your browser to view the Swagger UI documentation.
 
 ## API Endpoints
 
