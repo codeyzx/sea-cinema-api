@@ -19,7 +19,7 @@ git clone https://github.com/codeyzx/sea-cinema-api.git
 2. Install dependencies:
 
 ```
-   cd sea-cinema-api
+cd sea-cinema-api
 ```
 
 ```
@@ -50,8 +50,10 @@ npm install
 npm start
 ```
 
-The server will start running on http://localhost:3000. 5. Access the API documentation:
-Open http://localhost:3000/api-docs in your browser to view the Swagger UI documentation.
+The server will start running on http://localhost:3000.
+
+5. Access the API documentation:
+   Open http://localhost:3000/api-docs in your browser to view the Swagger UI documentation.
 
 ## API Endpoints
 
